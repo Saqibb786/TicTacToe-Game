@@ -18,6 +18,22 @@ const removeAnimationShiny = () => {
   }, 1000);
 }
 
+const highlightWinner = (pos1, pos2, pos3) => {
+  console.log("winner!");
+  clearTimeout(animationTimeout); 
+  pos1.classList.add("animation-shiny2");
+  pos2.classList.add("animation-shiny2");
+  pos3.classList.add("animation-shiny2");
+  console.log("found");
+}
+const disHighlightWinner = () => {
+  animationTimeout = setTimeout(() => {
+    boxes.forEach(box => {
+      box.classList.remove("animation-shiny2");
+      })
+  })
+}
+
 // Add event listener for mouse entering the box
 title.addEventListener("mouseenter", addAnimationShiny);
 // Add event listener for mouse leaving the box
@@ -64,13 +80,14 @@ const winPatterns = [
 ];
 const checkWinner = () => {
   for(let pattern of winPatterns)  {
-    let pos1 = boxes[pattern[0]].innerText;
-    let pos2 = boxes[pattern[1]].innerText;
-    let pos3 = boxes[pattern[2]].innerText;
-    if (pos1 != "" && pos2 != "" && pos3 != "") {
-      if (pos1 === pos2 && pos2 === pos3) {
-        showWinner(pos1);
+    let pos1 = boxes[pattern[0]];
+    let pos2 = boxes[pattern[1]];
+    let pos3 = boxes[pattern[2]];
+    if (pos1.innerText != "" && pos2.innerText != "" && pos3.innerText != "") {
+      if (pos1.innerText === pos2.innerText && pos2.innerText === pos3.innerText) {
         disableBoxes();
+        showWinner(pos1.innerText);
+        highlightWinner(pos1,pos2,pos3);
         addAnimationShiny();
         return true;
       }
@@ -83,6 +100,7 @@ const checkWinner = () => {
 const resetGame = () => {
   enableBoxes();
   removeAnimationShiny();
+  disHighlightWinner();
   resetBtn.innerText = "Reset";
   title.innerText = `Tic Tac Toe`;
   playerO = true;
@@ -106,6 +124,7 @@ const showWinner = (pos1) => {
 const switchBtn = () => {
   resetBtn.innerText = "New Game";
 } 
+
 
 resetBtn.addEventListener("click", resetGame);
 

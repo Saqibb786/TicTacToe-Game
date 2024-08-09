@@ -104,6 +104,10 @@ body {
   font-size: 8.2vmin;
   font-weight: bold;
 }
+.box:hover {
+  opacity: .9;
+  transform: scale(1.02);
+}
 /* Dark Mode Styles */
 .dark-mode .box {
   background-color: #444;
@@ -265,6 +269,28 @@ body {
       text-shadow: 0 0 15px #735F3D; ;
   }
 }
+@keyframes shiny2 {
+  0% {
+    transform: scale(1.02);
+    text-shadow: 0 0 15px rgb(255, 239, 116);        
+  }
+  25% {
+    transform: scale(1);
+    text-shadow: none;   
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 0 15px rgb(255, 239, 116);   
+  }
+  75% {
+    transform: scale(1);
+    text-shadow: none; 
+  }
+  100% {
+      transform: scale(1.02);
+      text-shadow: 0 0 15px rgb(255, 239, 116); ;
+  }
+}
 .animation-rotato {
   /* animation: rotato 4s infinte; */
   animation-name: rotato;
@@ -278,6 +304,12 @@ body {
 }
 .animation-shiny {
   animation-name: shiny;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+.animation-shiny2 {
+  animation-name: shiny2;
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
