@@ -1,0 +1,284 @@
+* , *::after, *::before {
+  margin: 0;    /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+::selection {
+  background-color: rgb(255, 239, 116);
+  color: #333;
+}
+
+/* Editing Scroll Bars */
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: wheat;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #735F3D;
+} 
+
+
+
+html    {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 250, 211);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.4rem;
+  color: #222;
+  text-align: center;
+  
+  width: 100%;
+  height: 200dvh;
+}
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #333;
+  color: #f1f1f1;
+}
+
+
+.mainContent {
+  margin-top: 4.5rem;
+}
+
+.title {
+  color: rgb(255, 239, 116);
+  -webkit-text-stroke: .5px #735F3D;
+  text-align: center;
+  font-size: 4.5rem;
+  margin: 0 auto 3rem ;
+
+  height: auto;
+  max-width: 80dvw;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .3);    
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game {
+  /* background-color: aliceblue; */
+  width: 60vmin;
+  height: 60vmin;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.box {
+  width: 18vmin;
+  height: 18vmin;
+  cursor: pointer;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, .8); 
+  border: none;
+  /* border: 4px solid rgb(255, 239, 116); */
+  border-radius: 20%;
+
+  background-color: #735F3D;
+  color: rgb(255, 239, 116); 
+  font-size: 8.2vmin;
+  font-weight: bold;
+}
+/* Dark Mode Styles */
+.dark-mode .box {
+  background-color: #444;
+}
+
+.resetBtn {
+  margin: 2rem;
+  padding: 1rem 2rem;
+  background: rgb(255, 250, 211);
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #735F3D;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #735F3D;
+
+  transition: .3s;
+}
+
+.resetBtn:hover {
+  transform: scale(1.03);
+  font-size: 2.1rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+/* Dark Mode Styles */
+.dark-mode .resetBtn {
+  background: #333;
+  color: rgb(255, 239, 116);
+  border: 3px solid rgb(255, 239, 116);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dark Mode button Styles */
+.modeBtn {
+  margin: 2rem 4rem;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #735F3D;
+
+  position: fixed;
+  top: 1rem;
+  right: -1rem;
+
+  transition: transform .3s ease-in, color .3s ease-out;
+}
+.modeBtn:focus, .modeBtn:hover {
+  transform: scale(1.2);
+  color: rgb(255, 239, 116);
+}
+/* Dark Mode Styles */
+.dark-mode .modeBtn {
+  color: rgb(255, 239, 116);
+}
+/* .dark-mode .modeBtn:focus, */
+.dark-mode .modeBtn:hover { 
+  color: #735F3D;;
+}
+
+
+
+
+
+
+/* Media Queries */
+@media screen and (max-width: 628px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .resetBtn {
+    padding: .8rem 1.6rem;
+    border: 2px solid #735F3D;
+    border-radius: .8rem;
+    font-size: 1.6rem;
+  }
+  .resetBtn:hover {
+    transform: scale(1.01);
+    font-size: 1.7rem;
+  }
+}
+
+
+
+/* Animationss */
+
+@keyframes rotato {
+  0% {
+      transform: rotate(0deg);
+      font-size: 2rem;
+      color: #393939;
+      text-shadow: 0 -3rem 1px rgba(0, 0, 0, 0.5);        
+  }
+  25% {
+      transform: rotate(3deg);
+      font-size: 3.5rem;
+      color: rgb(255, 239, 116);
+      text-shadow: 0 5rem 1px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+      transform: rotate(0deg);
+      font-size: 2rem;
+      color: #393939;
+      text-shadow: 0 -3rem 1px rgba(0, 0, 0, 0.5);
+  }
+  75% {
+      transform: rotate(-3deg);
+      font-size: 3.5rem;
+      color: rgb(255, 239, 116);
+      text-shadow: 0 5rem 1px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+      transform: rotate(0deg);
+      font-size: 2rem;
+      color: #393939;
+      text-shadow: 0 -3rem 1px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes slidy {
+  from {
+      transform: translateX(0vw); /* Start position off-screen on the left */
+  }
+  to {
+      transform: translateX(100vw); /* End position off-screen on the right */
+  }
+}
+@keyframes shiny {
+  0% {
+    transform: scale(1.02);
+    text-shadow: 0 0 15px #735F3D;        
+  }
+  25% {
+    transform: scale(1);
+    text-shadow: none;   
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 0 0 15px #735F3D;   
+  }
+  75% {
+    transform: scale(1);
+    text-shadow: none; 
+  }
+  100% {
+      transform: scale(1.02);
+      text-shadow: 0 0 15px #735F3D; ;
+  }
+}
+.animation-rotato {
+  /* animation: rotato 4s infinte; */
+  animation-name: rotato;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.animation-slidy {
+  animation-name: slidy;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+.animation-shiny {
+  animation-name: shiny;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
