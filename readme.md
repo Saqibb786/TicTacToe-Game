@@ -4,6 +4,10 @@ A simple Tic Tac Toe game built with HTML, CSS, and JavaScript. Two players, O a
 
 ![TicTacToe Game Preview](./assets/TicTacToe-thumbnail.jpg)
 
+## Live Demo
+
+The site is hosted live on Netlify. You can view it here: [Tic-Tac-Toe](https://tictactoe-by-saqib.netlify.app/)
+
 ## Description
 
 - **Two-Player Mode**: Play with a friend.
@@ -25,3 +29,17 @@ A simple Tic Tac Toe game built with HTML, CSS, and JavaScript. Two players, O a
 - Reset and new game functionality
 - Dark mode toggle
 - Cool animations
+
+## Installation
+
+To run the project locally:
+
+1. Clone the repository: `git clone https://github.com/Saqibb786/TicTacToe-Game.git`
+
+## Contributions
+
+If you’d like to contribute, feel free to fork the repository and submit a pull request. You can also open an issue for any bugs or feature requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
