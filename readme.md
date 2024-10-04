@@ -28,6 +28,10 @@ The site is hosted live on Netlify. You can view it here: [Tic-Tac-Toe](https://
 - Dark mode toggle
 - Cool animations
 
+## Installation
+To run the project locally:
+1. Clone the repository: git clone https://github.com/Saqibb786/TicTacToe-Game.git
+
 ## Contributions
 If you’d like to contribute, feel free to fork the repository and submit a pull request. You can also open an issue for any bugs or feature requests.
 
